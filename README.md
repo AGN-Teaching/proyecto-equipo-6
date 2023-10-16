@@ -70,7 +70,8 @@ El flujo de la aplicación es la siguiente:
 
 En el siguiente diagrama UML se muestra la relacion de clases y como se organizan para representar eventos, clientes y tarjetas de credito. Las relaciones de asociación, composición, agregación y herencia son fundamentales para enteder como interactuan las clases en el proyecto.
 
-!()[*]
+![ProyectoVentaBoletos](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/07730d24-6d6f-4312-bc46-34e72571b97b)
+
 
 ### Relaciones de clases:
 
@@ -125,6 +126,31 @@ Manejo de Excepciones: Para gestionar estas excepciones, el código emplea la es
 En resumen, el código del sistema de venta de boletos es menos suceptible a errores al tratar con situaciones inesperadas tanto en la interacción con archivos como en las entradas de los usuarios. Esto evita que el programa se bloquee o deje de funcionar de manera inesperada en caso de problemas.
 
 ## Pruebas de funcionamiento 
+
+Primero se ingresa al menu administrador por medio de una contraseña:
+
+![ingresoadmin](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/ce9b6dd2-1e32-45be-af9b-3770bea7b251)
+
+Se añaden 5 eventos al catalogo de eventos:
+
+![mostrarcatalogo1](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/7099793e-3b6c-45c9-a4fa-318e3b213f22)
+![mostrrcatalogo2](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/b76e2f15-1cd7-496d-8965-bf7f548dec82)
+
+Se guardan los eventos en un archivo **MisEventos.dat**
+
+![guardareventos](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/35632fe8-624c-41fd-99bc-eec4a21a3e41)
+
+Se carga el archivo **MisEventos.dat**
+
+![cargararchivo](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/386e3c41-4e35-487e-afd9-1900aac57515)
+
+El cliente ingresa sus datos al escoger un evento del catalogo:
+
+![comprarboleto](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/a547104e-d104-418c-86c5-82957795ad45)
+
+Se despliega los resultados de su compra:
+
+![boletocomprado](https://github.com/AGN-Teaching/proyecto-equipo-6/assets/125041471/23597daa-9e0a-4ec3-8be6-19ef02836790)
 
 
 
