@@ -66,7 +66,7 @@ El flujo de la aplicación es la siguiente:
 6. Tanto el administrador como el cliente pueden salir de la aplicación en cualquier momento.
 
 
-## Diseño de diagrama UMl y su explicación
+## Diseño de diagrama UML y su explicación
 
 En el siguiente diagrama UML se muestra la relacion de clases y como se organizan para representar eventos, clientes y tarjetas de credito. Las relaciones de asociación, composición, agregación y herencia son fundamentales para enteder como interactuan las clases en el proyecto.
 
