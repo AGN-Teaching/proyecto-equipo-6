@@ -8,9 +8,11 @@ public class AplicacionSistemaBoletos {
 
     // Función para el ingreso de contraseña del administrador.
     public boolean ingresoContraseñaAdministrador() {
+
         boolean verdadero = true;
         boolean contraseñaCorrecta = false;
-        while (verdadero) {
+
+        while (verdadero == true) {
             System.out.println("Contraseña:");
             Scanner entrada = new Scanner(System.in);
             try {
@@ -23,7 +25,7 @@ public class AplicacionSistemaBoletos {
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Error: Ingresa un número válido.");
-                entrada.nextLine(); // Limpia el buffer de entrada.
+                entrada.nextLine();
             }
         }
         return contraseñaCorrecta;
@@ -42,12 +44,13 @@ public class AplicacionSistemaBoletos {
 
             int menu = 0;
 
-            while (verdadero == true) {
+            boolean verdaderoMenu = true;
+            while (verdaderoMenu == true) {
                 System.out.println("Ingresa el número de tu preferencia: ");
                 Scanner menuNumero = new Scanner(System.in);
                 menu = menuNumero.nextInt();
                 if (menu > 0 && menu < 7) {
-                    verdadero = false;
+                    verdaderoMenu = false;
                 } else {
                     System.out.println("Ingresa un número válido");
                 }
@@ -64,7 +67,7 @@ public class AplicacionSistemaBoletos {
             } else if (menu == 5) {
                 guardarEventos();
             } else {
-                verdadero = true;
+                verdadero = false;
                 ejecutar();
             }
         }
@@ -159,7 +162,7 @@ public class AplicacionSistemaBoletos {
         }
         boolean esPremium = (menuEsPremium == 1);
 
-        System.out.println("Boletos a Disposición");
+        System.out.println("Boletos a Disposición: ");
         int boletosDisponibles = num.nextInt();
         System.out.println("Equipos: ");
         String equipos = text.nextLine();
@@ -167,7 +170,8 @@ public class AplicacionSistemaBoletos {
         String tipoDeporte = text.nextLine();
 
         // Agregamos el evento deportivo al sistema.
-        sistema1.agregarEventoDeportivo(nombre, año, mes, dia, lugar, costo, esPremium, boletosDisponibles, equipos, tipoDeporte);
+        sistema1.agregarEventoDeportivo(nombre, año, mes, dia, lugar, costo, esPremium, boletosDisponibles, equipos,
+                tipoDeporte);
     }
 
     // Función para agregar un evento cultural.
@@ -203,7 +207,7 @@ public class AplicacionSistemaBoletos {
         }
         boolean esPremium = (menuEsPremium == 1);
 
-        System.out.println("Boletos a Disposición");
+        System.out.println("Boletos a Disposición: ");
         int boletosDisponibles = num.nextInt();
         System.out.println("Tipo de Evento: ");
         String tipoEvento = text.nextLine();
@@ -211,7 +215,8 @@ public class AplicacionSistemaBoletos {
         String artista = text.nextLine();
 
         // Agregamos el evento cultural al sistema.
-        sistema1.agregarEventoCultural(nombre, año, mes, dia, lugar, costo, esPremium, boletosDisponibles, tipoEvento, artista);
+        sistema1.agregarEventoCultural(nombre, año, mes, dia, lugar, costo, esPremium, boletosDisponibles, tipoEvento,
+                artista);
     }
 
     // Función para el menú del usuario cliente.
@@ -245,7 +250,7 @@ public class AplicacionSistemaBoletos {
         ArrayList<TarjetaCredito> tarjetas = cliente.getTrajetas();
 
         for (int i = 0; i < tarjetas.size(); i++) {
-            System.out.println(i + ".- " + tarjetas.get(i).getNumeroTrajeta());
+            System.out.println(i + ".-  Número de Tarjeta: " + (tarjetas.get(i).getNumeroTrajeta()));
         }
     }
 
@@ -257,7 +262,8 @@ public class AplicacionSistemaBoletos {
         try {
             int numeroEvento = num.nextInt();
             System.out.println("¿Cuántos boletos deseas?");
-            System.out.println("Número de boletos disponibles: " + sistema1.eventos.get(numeroEvento).getBoletosDisponibles());
+            System.out.println(
+                    "Número de boletos disponibles: " + sistema1.eventos.get(numeroEvento).getBoletosDisponibles());
             int numeroBoletos = num.nextInt();
             Cliente cliente = crearCuenta();
             mostrarTarjetasCredito(cliente);
@@ -283,20 +289,26 @@ public class AplicacionSistemaBoletos {
         tarjetas.add(agregarTarjeta());
 
         boolean verdad = true;
-        while (verdad) {
-            System.out.println("¿Deseas agregar otra tarjeta de Crédito?");
-            System.out.println("1.- Si\n2.- No");
-            System.out.println("Ingresa el número de tu preferencia: ");
-            int menu = num.nextInt();
-            if (menu > 0 && menu < 3) {
-                verdad = false;
-            } else {
-                System.out.println("Ingresa un número válido");
-            }
-            if (menu == 1) {
-                tarjetas.add(agregarTarjeta());
-            } else {
-                verdad = false;
+        boolean nuevaTarjeta = true;
+
+        while (nuevaTarjeta == true) {
+            while (verdad == true) {
+                System.out.println("¿Deseas agregar otra tarjeta de Crédito?");
+                System.out.println("1.- Si\n2.- No");
+                System.out.println("Ingresa el número de tu preferencia: ");
+                int menu = num.nextInt();
+                if (menu > 0 && menu < 3) {
+                    verdad = false;
+                } else {
+                    System.out.println("Ingresa un número válido");
+                }
+                if (menu == 1) {
+                    verdad = true;
+                    tarjetas.add(agregarTarjeta());
+                } else {
+            
+                    nuevaTarjeta = false;
+                }
             }
         }
 
@@ -309,20 +321,20 @@ public class AplicacionSistemaBoletos {
         Scanner num = new Scanner(System.in);
         Scanner text = new Scanner(System.in);
         boolean verdad = true;
-        long numeroTarjeta = 0;
+        double numeroTarjeta = 0;
 
         System.out.println("Número de Tarjeta: ");
-        while (verdad) {
+        while (verdad == true) {
             try {
-                numeroTarjeta = num.nextLong();
-                if (numeroTarjeta >= 1000000000000000L && numeroTarjeta <= 9999999999999999L) {
+                numeroTarjeta = num.nextDouble();
+                if (numeroTarjeta >= 1000000000000000F && numeroTarjeta <= 9999999999999999F) {
                     verdad = false;
                 } else {
                     System.out.println("Error: Ingresa los 16 números correspondientes");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Error: Ingresa un número válido.");
-                num.nextLine(); // Limpia el buffer de entrada.
+                num.nextLine();
             }
         }
 
@@ -335,7 +347,7 @@ public class AplicacionSistemaBoletos {
         int dia = num.nextInt();
         System.out.println("CVV: ");
         int cvv = num.nextInt();
-        TarjetaCredito tarjetaCredito = sistema1.agregarTarjetas(mes, año, mes, dia, cvv);
+        TarjetaCredito tarjetaCredito = sistema1.agregarTarjetas(numeroTarjeta, año, mes, dia, cvv);
         return tarjetaCredito;
     }
 
