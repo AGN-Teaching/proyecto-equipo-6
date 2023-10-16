@@ -48,11 +48,16 @@ public class AplicacionSistemaBoletos {
             while (verdaderoMenu == true) {
                 System.out.println("Ingresa el número de tu preferencia: ");
                 Scanner menuNumero = new Scanner(System.in);
-                menu = menuNumero.nextInt();
-                if (menu > 0 && menu < 7) {
-                    verdaderoMenu = false;
-                } else {
-                    System.out.println("Ingresa un número válido");
+                try {
+                    menu = menuNumero.nextInt();
+                    if (menu > 0 && menu < 7) {
+                        verdaderoMenu = false;
+                    } else {
+                        System.out.println("Ingresa un número válido");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Error: Ingresa un número.");
+                    menuNumero.nextLine();
                 }
             }
 
@@ -153,14 +158,25 @@ public class AplicacionSistemaBoletos {
 
         int menuEsPremium = 0;
         while (verdad == true) {
-            menuEsPremium = num.nextInt();
-            if (menuEsPremium > 0 && menuEsPremium < 3) {
-                verdad = false;
-            } else {
-                System.out.println("Número no válido");
+            try {
+                menuEsPremium = num.nextInt();
+                if (menuEsPremium > 0 && menuEsPremium < 3) {
+                    verdad = false;
+                } else {
+                    System.out.println("Número no válido");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Ingresa un número.");
+                num.nextLine();
             }
         }
-        boolean esPremium = (menuEsPremium == 1);
+
+        boolean esPremium;
+        if (menuEsPremium == 1) {
+            esPremium = true;
+        } else {
+            esPremium = false;
+        }
 
         System.out.println("Boletos a Disposición: ");
         int boletosDisponibles = num.nextInt();
@@ -198,14 +214,25 @@ public class AplicacionSistemaBoletos {
 
         int menuEsPremium = 0;
         while (verdad == true) {
-            menuEsPremium = num.nextInt();
-            if (menuEsPremium > 0 && menuEsPremium < 3) {
-                verdad = false;
-            } else {
-                System.out.println("Número no válido");
+            try {
+                menuEsPremium = num.nextInt();
+                if (menuEsPremium > 0 && menuEsPremium < 3) {
+                    verdad = false;
+                } else {
+                    System.out.println("Número no válido");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Ingresa un número.");
+                num.nextLine();
             }
         }
-        boolean esPremium = (menuEsPremium == 1);
+
+        boolean esPremium;
+        if (menuEsPremium == 1) {
+            esPremium = true;
+        } else {
+            esPremium = false;
+        }
 
         System.out.println("Boletos a Disposición: ");
         int boletosDisponibles = num.nextInt();
@@ -228,11 +255,16 @@ public class AplicacionSistemaBoletos {
 
         while (verdadero == true) {
             System.out.println("Ingresa el número de tu preferencia: ");
-            menu = entrada.nextInt();
-            if (menu > 0 && menu < 4) {
-                verdadero = false;
-            } else {
-                System.out.println("Ingresa un número válido");
+            try {
+                menu = entrada.nextInt();
+                if (menu > 0 && menu < 4) {
+                    verdadero = false;
+                } else {
+                    System.out.println("Ingresa un número válido");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número");
+                entrada.nextLine();
             }
         }
 
@@ -296,18 +328,23 @@ public class AplicacionSistemaBoletos {
                 System.out.println("¿Deseas agregar otra tarjeta de Crédito?");
                 System.out.println("1.- Si\n2.- No");
                 System.out.println("Ingresa el número de tu preferencia: ");
-                int menu = num.nextInt();
-                if (menu > 0 && menu < 3) {
-                    verdad = false;
-                } else {
-                    System.out.println("Ingresa un número válido");
-                }
-                if (menu == 1) {
-                    verdad = true;
-                    tarjetas.add(agregarTarjeta());
-                } else {
-            
-                    nuevaTarjeta = false;
+                try {
+                    int menu = num.nextInt();
+                    if (menu > 0 && menu < 3) {
+                        verdad = false;
+                    } else {
+                        System.out.println("Ingresa un número válido");
+                    }
+                    if (menu == 1) {
+                        verdad = true;
+                        tarjetas.add(agregarTarjeta());
+                    } else {
+
+                        nuevaTarjeta = false;
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Ingresa un número.");
+                    num.nextLine();
                 }
             }
         }
@@ -360,11 +397,16 @@ public class AplicacionSistemaBoletos {
 
         while (Verdadero == true) {
             System.out.println("Ingresa el número de tu preferencia: ");
-            menu = entrada.nextInt();
-            if (menu > 0 && menu < 4) {
-                Verdadero = false;
-            } else {
-                System.out.println("Ingresa un número válido");
+            try {
+                menu = entrada.nextInt();
+                if (menu > 0 && menu < 4) {
+                    Verdadero = false;
+                } else {
+                    System.out.println("Ingresa un número válido");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Error: Ingresa un número valido");
+                entrada.nextLine();
             }
         }
 
