@@ -136,13 +136,8 @@ El proyecto de Sistema de Venta de Boletos es un ejemplo sólido de cómo se apl
 
 - Sánchez Ortiz Estefany Harisvet
 
-El análisis del problema presentado, que involucra la creación de un servicio de venta de boletos para eventos culturales y deportivos, ha resultado en una solución sólida y adecuada para abordar los requisitos clave de este escenario. A través de la comprensión detallada de las necesidades y funciones esenciales, se ha diseñado un sistema que cumple con los objetivos establecidos.
-
-La solución propuesta abarca la gestión de eventos, la gestión de clientes y la gestión eficiente de pagos, al tiempo que considera las complejidades de los eventos "Premium" con restricciones de compra. La implementación de clases como Evento, EventoCultural, EventoDeportivo, Cliente y TarjetaCredito proporciona una estructura eficiente y organizada para gestionar la información y las interacciones dentro del sistema.
-
-La interfaz de usuario planeada permitirá una experiencia amigable y efectiva para los clientes, facilitando la búsqueda de eventos, la compra de boletos y la administración de cuentas. La capacidad de guardar y cargar eventos y detalles de clientes garantiza la persistencia de datos y una experiencia continua para los usuarios.
-
-En resumen, la solución propuesta demuestra ser sólida y adecuada para resolver el problema planteado. Se abordan los requisitos clave de manera integral y se ofrece una interfaz intuitiva para los clientes. La planificación y el diseño cuidadosos de clases y componentes respaldan una implementación efectiva y, en última instancia, un servicio de venta de boletos eficiente para eventos culturales y deportivos.
+Esta solución se destaca por su enfoque integral y eficiente para abordar los requisitos clave del problema. La planificación y el diseño cuidadosos de clases y componentes respaldan la implementación exitosa de un servicio de venta de boletos para eventos culturales y deportivos. Esta solución promete una experiencia satisfactoria para los clientes y una gestión efectiva de eventos y cuentas.
+La Programación Orientada a Objetos ha desempeñado un papel fundamental en la solución de este problema, al proporcionar una estructura coherente y modular que facilita la gestión de datos y la interacción de los usuarios. Esta metodología ha enriquecido la eficiencia y la organización del sistema de venta de boletos para eventos culturales y deportivos.
 
 - Candelaria Rivera Emiliano
 
