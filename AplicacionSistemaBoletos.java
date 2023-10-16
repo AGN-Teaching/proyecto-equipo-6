@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class AplicacionSistemaBoletos {
 
-    SistemaVentaBoletos sistema1 = new SistemaVentaBoletos(); // Creamos una instancia del sistema de venta de boletos.
+    // Creamos una instancia del sistema de venta de boletos.
+    SistemaVentaBoletos sistema1 = new SistemaVentaBoletos();
 
     // Función para el ingreso de contraseña del administrador.
     public boolean ingresoContraseñaAdministrador() {
@@ -24,8 +25,10 @@ public class AplicacionSistemaBoletos {
                     System.out.println("Contraseña incorrecta");
                 }
             } catch (InputMismatchException e) {
+                // Captura y manejo de la excepción si el usuario ingresa algo que no es un
+                // número válido.
                 System.out.println("Error: Ingresa un número válido.");
-                entrada.nextLine();
+                entrada.nextLine(); // Limpia el búfer del teclado.
             }
         }
         return contraseñaCorrecta;
@@ -33,8 +36,8 @@ public class AplicacionSistemaBoletos {
 
     // Función para el menú del administrador.
     public void usuarioAnministrador() {
-
-        ingresoContraseñaAdministrador(); // Solicitamos la contraseña del administrador.
+        // Solicitamos la contraseña del administrador.
+        ingresoContraseñaAdministrador();
 
         boolean verdadero = true;
         while (verdadero == true) {
@@ -56,8 +59,9 @@ public class AplicacionSistemaBoletos {
                         System.out.println("Ingresa un número válido");
                     }
                 } catch (InputMismatchException e) {
+                    // Manejo de excepción si el usuario ingresa algo que no es un número.
                     System.out.println("Error: Ingresa un número.");
-                    menuNumero.nextLine();
+                    menuNumero.nextLine(); // Limpia el búfer del teclado.
                 }
             }
 
@@ -103,6 +107,7 @@ public class AplicacionSistemaBoletos {
             int numeroEvento = eliminarEvento.nextInt();
             sistema1.eliminarEvento(numeroEvento);
         } catch (InputMismatchException e) {
+            // Manejo de excepción si el usuario ingresa algo que no es un número válido.
             System.out.println("Error: Ingresa un número válido.");
         }
     }
@@ -150,7 +155,7 @@ public class AplicacionSistemaBoletos {
         System.out.println("Lugar: ");
         String lugar = text.nextLine();
         System.out.println("Costo: ");
-        double costo = num.nextInt();
+        double costo = num.nextDouble();
         boolean verdad = true;
 
         System.out.println("Es Premium: ");
@@ -166,6 +171,7 @@ public class AplicacionSistemaBoletos {
                     System.out.println("Número no válido");
                 }
             } catch (InputMismatchException e) {
+                // Manejo de excepción si el usuario ingresa algo que no es un número.
                 System.out.println("Ingresa un número.");
                 num.nextLine();
             }
@@ -206,7 +212,7 @@ public class AplicacionSistemaBoletos {
         System.out.println("Lugar: ");
         String lugar = text.nextLine();
         System.out.println("Costo: ");
-        double costo = num.nextInt();
+        double costo = num.nextDouble();
         boolean verdad = true;
 
         System.out.println("Es Premium: ");
@@ -222,6 +228,7 @@ public class AplicacionSistemaBoletos {
                     System.out.println("Número no válido");
                 }
             } catch (InputMismatchException e) {
+                // Manejo de excepción si el usuario ingresa algo que no es un número.
                 System.out.println("Ingresa un número.");
                 num.nextLine();
             }
@@ -263,6 +270,7 @@ public class AplicacionSistemaBoletos {
                     System.out.println("Ingresa un número válido");
                 }
             } catch (InputMismatchException e) {
+                // Manejo de excepción si el usuario ingresa algo que no es un número.
                 System.out.println("Error: Ingresa un número");
                 entrada.nextLine();
             }
@@ -300,9 +308,10 @@ public class AplicacionSistemaBoletos {
             Cliente cliente = crearCuenta();
             mostrarTarjetasCredito(cliente);
             System.out.println("Ingresa el número de la tarjeta con la que realizarás la compra: ");
-            int numeroDeCuenta = num.nextInt();
+            int opcionDeCuenta = num.nextInt();
             sistema1.comprarBoletos(numeroEvento, numeroBoletos);
         } catch (InputMismatchException e) {
+            // Manejo de excepción si el usuario ingresa algo que no es un número válido.
             System.out.println("Error: Ingresa un número válido.");
         }
     }
@@ -339,10 +348,10 @@ public class AplicacionSistemaBoletos {
                         verdad = true;
                         tarjetas.add(agregarTarjeta());
                     } else {
-
                         nuevaTarjeta = false;
                     }
                 } catch (InputMismatchException e) {
+                    // Manejo de excepción si el usuario ingresa algo que no es un número.
                     System.out.println("Ingresa un número.");
                     num.nextLine();
                 }
@@ -356,7 +365,7 @@ public class AplicacionSistemaBoletos {
     // Función para agregar una tarjeta de crédito.
     public TarjetaCredito agregarTarjeta() {
         Scanner num = new Scanner(System.in);
-        Scanner text = new Scanner(System.in);
+
         boolean verdad = true;
         double numeroTarjeta = 0;
 
@@ -370,6 +379,7 @@ public class AplicacionSistemaBoletos {
                     System.out.println("Error: Ingresa los 16 números correspondientes");
                 }
             } catch (InputMismatchException e) {
+                // Manejo de excepción si el usuario ingresa algo que no es un número válido.
                 System.out.println("Error: Ingresa un número válido.");
                 num.nextLine();
             }
