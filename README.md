@@ -53,7 +53,7 @@ Se ha desarrollado una aplicación en java que consta de varias clases y metodos
 - **Clase 'SistemaVentaBoletos'**: Esta clase es la aprte central de la aplicion y maneja la logica del negocio. Contiene metodos para agregar, eliminar, mostrar, cargar y guardar eventos, asi como para comprar boletos y gestionar tarjetas de credito. 
 - **Clases 'EventoDeportivo' y 'EventoCultural'**: Estas clases heredan de una clase **'Evento'** y representan eventos deportivos y culturales respectivamente. CAda una tiene atributos especifico para su tipo de evento. 
 - **Clases 'Cleinte' y 'TarjetaCredito'**: Esatas clsaes representan a lso clientes y sus tarjetas de credito. Los clientes pueden crear cuentas y asociar tarjetas de credito.
-- **Interfaces 'IAdministrador' e 'ICliente': Definen los metodos que deben ser implementados por las clases que actuan como administradores o clientes.
+- **Interfaces 'IAdministrador' e 'ICliente'**: Definen los metodos que deben ser implementados por las clases que actuan como administradores o clientes.
 
 ### Flujo de la Aplicación: 
 El flujo de la aplicación es la siguiente:
